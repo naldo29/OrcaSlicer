@@ -1,0 +1,15 @@
+name: Build Windows x64 only
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_windows_x64:
+    name: Build Windows x64
+    uses: ./.github/workflows/build_check_cache.yml
+    with:
+      os: windows-latest
+      arch: x64
+      compiler: clang
+      build-deps-only: false
+    secrets: inherit
